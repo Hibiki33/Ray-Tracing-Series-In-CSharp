@@ -83,9 +83,9 @@ namespace RayTracingInOneWeekend
             _pixelOrigin = LookFrom - (FocusDistance * w) - (viewportU + viewportV) * 0.5f;
             _pixelOrigin += 0.5f * (_pixelDeltaU + _pixelDeltaV);
 
-            var defocusRadius = FocusDistance * Math.Tan(Utilities.DegreesToRadians(DefocusAngle / 2));
-            _defocusDiskU = u * DefocusAngle;
-            _defocusDiskV = v * DefocusAngle;
+            var defocusRadius = FocusDistance * (float)Math.Tan(Utilities.DegreesToRadians(DefocusAngle / 2));
+            _defocusDiskU = u * defocusRadius;
+            _defocusDiskV = v * defocusRadius;
         }
 
         private Ray GetRay(int i, int j)

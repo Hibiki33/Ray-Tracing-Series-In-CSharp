@@ -66,7 +66,7 @@ namespace RayTracingInOneWeekend.Material
             bool cannotRefract = refractionRatio * sinTheta > 1.0f;
             Vector3 direction;
 
-            if (cannotRefract || Reflectance(cosTheta, refractionRatio) > Utilities.RandomFloat(0.0f, 1.0f))
+            if (cannotRefract || Reflectance(cosTheta, refractionRatio) > Utilities.RandomFloat())
             {
                 direction = Utilities.Reflect(unitDirection, rec.Normal);
             }
